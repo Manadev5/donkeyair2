@@ -1,0 +1,210 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\models\\donkeyaircontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\models\\donkeyaircontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\controllers\\destinationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\controllers\\destinationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\models\\destination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\models\\destination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\models\\departure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\models\\departure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|c:\\users\\utilisateur\\desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\migrations\\donkeyaircontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA24CF91-4DC3-4BBC-BAB8-681DB8EF8950}|api-donkey-air\\api-donkey-air.csproj|solutionrelative:api-donkey-air\\migrations\\donkeyaircontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TicketsController.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Controllers\\TicketsController.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Controllers\\TicketsController.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Controllers\\TicketsController.cs",
+              "RelativeToolTip": "api-donkey-air\\Controllers\\TicketsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T17:33:19.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Models\\Ticket.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\Ticket.cs",
+              "RelativeToolTip": "api-donkey-air\\Models\\Ticket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T17:08:05.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "api-donkey-air\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T17:03:37.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DestinationsController.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Controllers\\DestinationsController.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Controllers\\DestinationsController.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Controllers\\DestinationsController.cs",
+              "RelativeToolTip": "api-donkey-air\\Controllers\\DestinationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T17:02:40.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminsController.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Controllers\\AdminsController.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Controllers\\AdminsController.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Controllers\\AdminsController.cs",
+              "RelativeToolTip": "api-donkey-air\\Controllers\\AdminsController.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T17:01:29.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\User.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\User.cs",
+              "RelativeToolTip": "api-donkey-air\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T16:45:01.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Models\\Admin.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\Admin.cs",
+              "RelativeToolTip": "api-donkey-air\\Models\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T16:41:07.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Destination.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\Destination.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Models\\Destination.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\Destination.cs",
+              "RelativeToolTip": "api-donkey-air\\Models\\Destination.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T16:18:22.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DonkeyAirContext.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\DonkeyAirContext.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Models\\DonkeyAirContext.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\DonkeyAirContext.cs",
+              "RelativeToolTip": "api-donkey-air\\Models\\DonkeyAirContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T15:47:37.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Departure.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\Departure.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Models\\Departure.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Models\\Departure.cs",
+              "RelativeToolTip": "api-donkey-air\\Models\\Departure.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T14:39:19.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DonkeyAirContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Migrations\\DonkeyAirContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "api-donkey-air\\Migrations\\DonkeyAirContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\UTILISATEUR\\Desktop\\projets\\donkeyair2\\api-donkey-air\\api-donkey-air\\Migrations\\DonkeyAirContextModelSnapshot.cs",
+              "RelativeToolTip": "api-donkey-air\\Migrations\\DonkeyAirContextModelSnapshot.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:23:38.865Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
