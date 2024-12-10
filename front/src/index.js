@@ -6,7 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes,} from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import Home from './Components/Home';
+import Home from './Pages/Home';
+import LoginAdmin from './Pages/LoginAdmin';
+import LoginUser from './Pages/LoginUser';
+import Basket from './Pages/Basket'
+
+
 
 
 
@@ -17,7 +22,10 @@ root.render(
       <Header />
       <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/' element={<App />} />
+          <Route path='login-admin' element={<LoginAdmin />} />
+          <Route path='login-user' element={<LoginUser />} />
+          <Route path='basket' element={<Basket />} />
+          <Route path='pill' element={<App />} />
 
       </Routes>
       <Footer />

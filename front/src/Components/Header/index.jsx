@@ -1,6 +1,7 @@
-import LogoDonkey from '../Assets/logo_Donkeyair.png';
+import LogoDonkey from '../../Assets/logo_DonkeyAir.png';
+import { Link } from 'react-router-dom';
 
-function Home() {
+function Header() {
 
     return (
 
@@ -8,11 +9,11 @@ function Home() {
             <nav class="top-top">
                 <div class="top">
                     <div class="logo-top-left">
-                        <a class="nav-link" href="../index.php"><img src={LogoDonkey} height="70px" style="margin-top:1%;" /></a>
+                        <Link class="nav-link" to="home"><img src={LogoDonkey} height="70px" alt="logo-donkey" /></Link>
                     </div>
                     <div class="right">
-
-
+                        <Link to="login-admin"><span>Admin</span></Link>
+                        <Link to="login-user"><span>Log in</span></Link>
                     </div>
                 </div>
             </nav>
@@ -20,4 +21,4 @@ function Home() {
         </body>
     )
 }
-export default Home;
+export default Header;
