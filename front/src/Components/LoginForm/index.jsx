@@ -32,14 +32,19 @@ function LoginForm({ type, label }) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        const { second, value2 } = e.target;
-        setFormData({ [second]:value2, [name]: value });
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault(); // Empêche le rechargement de la page
         console.log('Form data:', formData);
         // Tu peux réutiliser formData ici, par exemple pour l'envoyer à un backend ou l'utiliser dans ton application
+        console.log(datas);
+        if (datas.some(x => x.name === formData.name && x.password === formData.second)) {
+            console.log('found')
+        } else {
+            console.log('not found')
+        }
     };
 
     return (
