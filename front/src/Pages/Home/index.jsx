@@ -1,96 +1,101 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 
 function Home() {
-    const [departureList, setdepartureList] = useState([]);
-    const [destinationList, setdestinationList] = useState([]);
-    const [formData, setFormData] = useState({
-        departure: '',
-        destination: '',
-    });
-   let departureCountries = [];
-   let destinationCountries = [];
+    const [departureList, setDepartureList] = useState([]);
+    const [destinationList, setDestinationList] = useState([]);
 
-    const getDepartures = async (params) => {
+    // États pour les listes filtrées
+    const [filteredDepartures, setFilteredDepartures] = useState([]);
+    const [filteredDestinations, setFilteredDestinations] = useState([]);
+
+    const getDepartures = async () => {
         try {
             const response = await fetch('https://localhost:7014/api/Departures', {
                 method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
             });
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             const data = await response.json();
-
-            return data
+            setDepartureList(data); // Mettre à jour la liste des départs
+            setFilteredDepartures(data); // Initialise la liste filtrée
         } catch (error) {
-            console.error('Erreur lors de la récupération des données:', error);
+            console.error('Erreur lors de la récupération des départs:', error);
         }
-    }
+    };
 
-    const getDestinations = async (params) => {
+    const getDestinations = async () => {
         try {
             const response = await fetch('https://localhost:7014/api/Destinations', {
                 method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
             });
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             const data = await response.json();
-            console.log(data);
-            return data
+            setDestinationList(data); // Mettre à jour la liste des destinations
+            setFilteredDestinations(data); // Initialise la liste filtrée
         } catch (error) {
-            console.error('Erreur lors de la récupération des données:', error);
+            console.error('Erreur lors de la récupération des destinations:', error);
         }
-    }
+    };
 
     useEffect(() => {
-        getDepartures().then((data) => { if (data) setdepartureList(data) })
-        getDestinations().then((data) => { if (data) setdestinationList(data) })
-    }, [])
+        getDepartures();
+        getDestinations();
+    }, []);
 
+    // Gestion du filtre des départs
     const handleChangeDeparture = (e) => {
-        console.log(e);
-        let DeparturesSorted = departureList.find(x => (x.country.toLowerCase()).includes(e.target.value.toLowerCase()))
-        console.log(DeparturesSorted)
-        departureCountries = DeparturesSorted;
-
+        const value = e.target.value.toLowerCase();
+        const filtered = departureList.filter((x) =>
+            x.country.toLowerCase().includes(value)
+        );
+        setFilteredDepartures(filtered); // Met à jour l'état
     };
 
+    // Gestion du filtre des destinations
     const handleChangeDestination = (e) => {
-        console.log(e);
-        let DestinationsSorted = destinationList.find(x => (x.country.toLowerCase()).includes(e.target.value.toLowerCase()))
-        console.log(DestinationsSorted)
-        destinationCountries = DestinationsSorted;
-
-
+        const value = e.target.value.toLowerCase();
+        const filtered = destinationList;
+        setFilteredDestinations(filtered); // Met à jour l'état
+        console.log(filteredDestinations)
     };
-
 
     return (
-
         <main>
+            <h1>Hello</h1>
             <div>
-                <label for="departure">departure</label>
-                <input type="text" name="departure" onChange={handleChangeDeparture} />
+                <label htmlFor="departure">Departure</label>
+                <input
+                    type="text"
+                    name="departure"
+                    onChange={handleChangeDeparture}
+                    placeholder="Filtrer les départs..."
+                />
                 <div>
-                 </div>
-            </div>
-            <div>
-                <label for="destination">destination</label>
-                <input type="destination" name="destination" onChange={handleChangeDeparture}/>
-                <div>
-                  { departureCountries.map((i) => <span>{i.country}</span>)}
+                    {filteredDepartures.map((item, index) => (
+                        <span key={index}>{item.country}</span>
+                    ))}
                 </div>
             </div>
-            <button type="submit">se connecter</button>
+
+            <div>
+                <label htmlFor="destination">Destination</label>
+                <input
+                    type="text"
+                    name="destination"
+                    onChange={handleChangeDestination}
+                    placeholder="Filtrer les destinations..."
+                />
+                <div>
+                    {filteredDestinations.map((item, index) => (
+                        <span key={index}>{item.country}</span>
+                    ))}
+                </div>
+            </div>
+
+            <button type="submit">Se connecter</button>
         </main>
-    )
+    );
 }
 
-export default Home
+export default Home;
