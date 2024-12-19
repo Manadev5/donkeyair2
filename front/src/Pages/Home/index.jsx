@@ -55,9 +55,11 @@ function Home() {
     // Gestion du filtre des destinations
     const handleChangeDestination = (e) => {
         const value = e.target.value.toLowerCase();
-        const filtered = destinationList;
+        const filtered = destinationList.filter((x) =>
+            x.desCountry.toLowerCase().includes(value)
+        );
+        console.log(filtered)
         setFilteredDestinations(filtered); // Met à jour l'état
-        console.log(filteredDestinations)
     };
 
     return (
@@ -72,8 +74,8 @@ function Home() {
                     placeholder="Filtrer les départs..."
                 />
                 <div>
-                    {filteredDepartures.map((item, index) => (
-                        <span key={index}>{item.country}</span>
+                    {filteredDepartures.map((item) => (
+                        <span key={item.idDeparture}>{item.country}</span>
                     ))}
                 </div>
             </div>
@@ -87,8 +89,8 @@ function Home() {
                     placeholder="Filtrer les destinations..."
                 />
                 <div>
-                    {filteredDestinations.map((item, index) => (
-                        <span key={index}>{item.country}</span>
+                    {filteredDestinations.map((item) => (
+                        <span key={item.idDestination}>{item.desCountry}</span>
                     ))}
                 </div>
             </div>
