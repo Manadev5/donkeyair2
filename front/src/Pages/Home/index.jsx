@@ -8,6 +8,9 @@ function Home() {
     const [filteredDepartures, setFilteredDepartures] = useState([]);
     const [filteredDestinations, setFilteredDestinations] = useState([]);
 
+    const [IdDeparture, setIdDeparture] = useState([]);
+    const [IdDestination, setIdDestination] = useState([]);
+
     const getDepartures = async () => {
         try {
             const response = await fetch('https://localhost:7014/api/Departures', {
@@ -62,6 +65,35 @@ function Home() {
         setFilteredDestinations(filtered); // Met à jour l'état
     };
 
+    function saveDestination(IdDestination) {
+        setIdDestination(IdDestination);
+        console.log(IdDestination);
+    }
+
+    function saveDeparture(IdDeparture) {
+        setIdDeparture(IdDeparture);
+        console.log(IdDeparture)
+    }
+
+    const onSubmitCountries = async () => {
+
+        try {
+            if ((IdDeparture !== undefined || IdDeparture !== null) && (IdDestination !== undefined || IdDestination !== null)) {
+                const response = await fetch(`https://localhost:7014/api/Tickets?idDeparture=${IdDeparture}&idDestination=${IdDestination}`, {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                });
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                const data = await response.json();
+                console.log(data);
+            }
+        } catch (error) {
+            console.error('Erreur lors de la récupération des tickets:', error);
+
+        }
+
+    }
+
     return (
         <main>
             <h1>Hello</h1>
@@ -75,7 +107,7 @@ function Home() {
                 />
                 <div>
                     {filteredDepartures.map((item) => (
-                        <span key={item.idDeparture}>{item.country}</span>
+                        <span key={item.idDeparture} onClick={() => saveDeparture(item.idDeparture)}>{item.country}</span>
                     ))}
                 </div>
             </div>
@@ -90,12 +122,12 @@ function Home() {
                 />
                 <div>
                     {filteredDestinations.map((item) => (
-                        <span key={item.idDestination}>{item.desCountry}</span>
+                        <span key={item.idDestination} onClick={() => saveDestination(item.idDestination)}>{item.desCountry}</span>
                     ))}
                 </div>
             </div>
 
-            <button type="submit">Se connecter</button>
+            <button onClick={() => onSubmitCountries()}>Se connecter</button>
         </main>
     );
 }
