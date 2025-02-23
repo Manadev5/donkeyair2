@@ -11,6 +11,9 @@ function Home() {
     const [IdDeparture, setIdDeparture] = useState([]);
     const [IdDestination, setIdDestination] = useState([]);
 
+    let  departureName ;
+    let  destinationName;
+
     const getDepartures = async () => {
         try {
             const response = await fetch('https://localhost:7014/api/Departures', {
@@ -65,13 +68,15 @@ function Home() {
         setFilteredDestinations(filtered); // Met à jour l'état
     };
 
-    function saveDestination(IdDestination) {
+    function saveDestination(IdDestination, name) {
         setIdDestination(IdDestination);
-        console.log(IdDestination);
+        destinationName = name;
+        console.log(destinationName)
     }
 
-    function saveDeparture(IdDeparture) {
+    function saveDeparture(IdDeparture, name) {
         setIdDeparture(IdDeparture);
+        departureName = name;
         console.log(IdDeparture)
     }
 
@@ -104,10 +109,11 @@ function Home() {
                     name="departure"
                     onChange={handleChangeDeparture}
                     placeholder="Filtrer les départs..."
+                    value={departureName}
                 />
                 <div>
                     {filteredDepartures.map((item) => (
-                        <span key={item.idDeparture} onClick={() => saveDeparture(item.idDeparture)}>{item.country}</span>
+                        <span key={item.idDeparture} onClick={() => saveDeparture(item.idDeparture, item.country)}>{item.country}</span>
                     ))}
                 </div>
             </div>
@@ -119,10 +125,11 @@ function Home() {
                     name="destination"
                     onChange={handleChangeDestination}
                     placeholder="Filtrer les destinations..."
+                    value={destinationName}
                 />
                 <div>
                     {filteredDestinations.map((item) => (
-                        <span key={item.idDestination} onClick={() => saveDestination(item.idDestination)}>{item.desCountry}</span>
+                        <span key={item.idDestination} onClick={() => saveDestination(item.idDestination, item.desCountry)}>{item.desCountry}</span>
                     ))}
                 </div>
             </div>
