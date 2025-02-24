@@ -9,7 +9,7 @@ import Footer from './Components/Footer';
 import Home from './Pages/Home';
 import LoginAdmin from './Pages/LoginAdmin';
 import LoginUser from './Pages/LoginUser';
-import Basket from './Pages/Basket'
+import Basket from './Pages/Basket';
 
 
 

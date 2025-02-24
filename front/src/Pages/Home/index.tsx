@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
+import { departure } from '../../Models/Ticket';
+import { destination } from '../../Models/Ticket';
 
 function Home() {
-    const [departureList, setDepartureList] = useState([]);
-    const [destinationList, setDestinationList] = useState([]);
+    const [departureList , setDepartureList] = useState(Array<departure>);
+    const [destinationList, setDestinationList] = useState(Array<destination>);
 
     // États pour les listes filtrées
-    const [filteredDepartures, setFilteredDepartures] = useState([]);
-    const [filteredDestinations, setFilteredDestinations] = useState([]);
+    const [filteredDepartures, setFilteredDepartures] = useState(Array<departure>);
+    const [filteredDestinations, setFilteredDestinations] = useState(Array<destination>);
 
-    const [IdDeparture, setIdDeparture] = useState([]);
-    const [IdDestination, setIdDestination] = useState([]);
+    const [IdDeparture, setIdDeparture] = useState(Number);
+    const [IdDestination, setIdDestination] = useState(Number);
 
-    let  departureName ;
-    let  destinationName;
+    const [departureName, setDepartureName] = useState(String);
+    const [destinationName, setDestinationName] = useState(String);
 
     const getDepartures = async () => {
         try {
@@ -21,7 +23,7 @@ function Home() {
                 headers: { 'Content-Type': 'application/json' },
             });
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-            const data = await response.json();
+            const data : departure[] = await response.json();
             setDepartureList(data); // Mettre à jour la liste des départs
             setFilteredDepartures(data); // Initialise la liste filtrée
         } catch (error) {
@@ -36,7 +38,7 @@ function Home() {
                 headers: { 'Content-Type': 'application/json' },
             });
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-            const data = await response.json();
+            const data : destination[] = await response.json();
             setDestinationList(data); // Mettre à jour la liste des destinations
             setFilteredDestinations(data); // Initialise la liste filtrée
         } catch (error) {
@@ -50,8 +52,8 @@ function Home() {
     }, []);
 
     // Gestion du filtre des départs
-    const handleChangeDeparture = (e) => {
-        const value = e.target.value.toLowerCase();
+    const handleChangeDeparture = (e: ChangeEvent<HTMLInputElement>) => {
+        const value = e.target?.value.toLowerCase();
         const filtered = departureList.filter((x) =>
             x.country.toLowerCase().includes(value)
         );
@@ -59,8 +61,8 @@ function Home() {
     };
 
     // Gestion du filtre des destinations
-    const handleChangeDestination = (e) => {
-        const value = e.target.value.toLowerCase();
+    const handleChangeDestination = (e: ChangeEvent<HTMLInputElement>) => {
+        const value = e.target?.value.toLowerCase();
         const filtered = destinationList.filter((x) =>
             x.desCountry.toLowerCase().includes(value)
         );
@@ -68,15 +70,15 @@ function Home() {
         setFilteredDestinations(filtered); // Met à jour l'état
     };
 
-    function saveDestination(IdDestination, name) {
+    function saveDestination(IdDestination: number, name: string) {
         setIdDestination(IdDestination);
-        destinationName = name;
+        setDestinationName(name)
         console.log(destinationName)
     }
 
-    function saveDeparture(IdDeparture, name) {
+    function saveDeparture(IdDeparture: number, name: string) {
         setIdDeparture(IdDeparture);
-        departureName = name;
+        setDepartureName(name)
         console.log(IdDeparture)
     }
 
