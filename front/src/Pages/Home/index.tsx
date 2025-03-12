@@ -3,18 +3,16 @@ import { departure } from '../../Models/Ticket';
 import { destination } from '../../Models/Ticket';
 
 function Home() {
-    const [departureList , setDepartureList] = useState(Array<departure>);
-    const [destinationList, setDestinationList] = useState(Array<destination>);
+    const [departureList, setDepartureList] = useState<departure[]>([]);
+    const [destinationList, setDestinationList] = useState<destination[]>([]);
 
-    // États pour les listes filtrées
-    const [filteredDepartures, setFilteredDepartures] = useState(Array<departure>);
-    const [filteredDestinations, setFilteredDestinations] = useState(Array<destination>);
+    const [filteredDepartures, setFilteredDepartures] = useState<departure[]>([]);
+    const [filteredDestinations, setFilteredDestinations] = useState<destination[]>([]);
+    const [IdDeparture, setIdDeparture] = useState<number | null>(null);
+    const [IdDestination, setIdDestination] = useState<number | null>(null);
 
-    const [IdDeparture, setIdDeparture] = useState(Number);
-    const [IdDestination, setIdDestination] = useState(Number);
-
-    const [departureName, setDepartureName] = useState(String);
-    const [destinationName, setDestinationName] = useState(String);
+    const [departureName, setDepartureName] = useState("");
+    const [destinationName, setDestinationName] = useState("");
 
     const getDepartures = async () => {
         try {
@@ -54,6 +52,7 @@ function Home() {
     // Gestion du filtre des départs
     const handleChangeDeparture = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target?.value.toLowerCase();
+        setDepartureName(value);
         const filtered = departureList.filter((x) =>
             x.country.toLowerCase().includes(value)
         );
@@ -63,6 +62,7 @@ function Home() {
     // Gestion du filtre des destinations
     const handleChangeDestination = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target?.value.toLowerCase();
+        setDestinationName(value);
         const filtered = destinationList.filter((x) =>
             x.desCountry.toLowerCase().includes(value)
         );
