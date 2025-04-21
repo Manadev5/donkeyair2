@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes,} from 'react-router-dom';
+import {AuthProvider} from './AuthContext';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Home from './Pages/Home';
-import LoginAdmin from './Pages/LoginAdmin';
+import RegistrationUser from './Pages/RegistartionUser';
 import LoginUser from './Pages/LoginUser';
 import Basket from './Pages/Basket';
 
@@ -18,18 +19,20 @@ import Basket from './Pages/Basket';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <Header />
-      <Routes>
-          <Route path='/home' element={<Home />} />
-          <Route path='login-admin' element={<LoginAdmin />} />
-          <Route path='login-user' element={<LoginUser />} />
-          <Route path='basket' element={<Basket />} />
-          <Route path='pill' element={<App />} />
+    <AuthProvider>
+      <Router>
+        <Header />
+        <Routes>
+            <Route path='/home' element={<Home />} />
+            <Route path='registration-user' element={<RegistrationUser />} />
+            <Route path='login-user' element={<LoginUser />} />
+            <Route path='basket' element={<Basket />} />
+            <Route path='pill' element={<App />} />
 
-      </Routes>
-      <Footer />
-    </Router>
+        </Routes>
+        <Footer />
+      </Router>
+    </AuthProvider>
   </React.StrictMode>
 );
 
