@@ -16,8 +16,10 @@ function LoginUser(){
                         throw new Error(`HTTP error! Status: ${response.status}`)
                 }else{
                     const data:responseConnexion = await response.json();
-                    login(data.token);
-                    alert("Connexion réussie !");
+                    if(data.token){
+                        login(data.token);
+                        alert("Connexion réussie !");
+                    }
                 };
 
             } catch (error) {

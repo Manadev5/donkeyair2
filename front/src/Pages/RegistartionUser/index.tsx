@@ -22,8 +22,10 @@ function RegistartionUser(){
                 if (!response.ok){
                         throw new Error(`HTTP error! Status: ${response.status}`)
                 }else{
-                    login(data.token);
-                    alert("Connexion réussie !");
+                    if(data.token){
+                        login(data.token);
+                        alert("Creation de compte réussie !");
+                    }
                     setUserName(name);
                     setTimeout(() => navigate('/home'),1000);
                 };

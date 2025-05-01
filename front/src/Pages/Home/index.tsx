@@ -1,6 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import { departure } from '../../Models/Ticket';
-import { destination } from '../../Models/Ticket';
+import { departure, destination, Ticket } from '../../Models/Ticket';
 
 function Home() {
     const [departureList, setDepartureList] = useState<departure[]>([]);
@@ -8,11 +7,35 @@ function Home() {
 
     const [filteredDepartures, setFilteredDepartures] = useState<departure[]>([]);
     const [filteredDestinations, setFilteredDestinations] = useState<destination[]>([]);
+
     const [IdDeparture, setIdDeparture] = useState<number | null>(null);
     const [IdDestination, setIdDestination] = useState<number | null>(null);
 
     const [departureName, setDepartureName] = useState("");
     const [destinationName, setDestinationName] = useState("");
+
+    const [ticketList, setTicketList] = useState<Ticket[]>([]);
+
+    const [isRoundTrip, setIsRoundTrip] = useState<boolean>(false);
+
+    //etat du dropdown des pays
+    const[showDepartureDropdown, setShowDepartureDropdown] = useState<boolean>(false);
+    const[showDestinationDropdown, setShowDestinationDropdown] = useState<boolean>(false);
+    //gestion click sur la page pour masquer les dropdowns
+    useEffect(() => {
+        const handleClick = () => {
+          setShowDepartureDropdown(false);
+          setShowDestinationDropdown(false);
+        };
+    
+        // Ajouter le listener
+        document.addEventListener("click", handleClick);
+    
+        // Nettoyage quand le composant se démonte
+        return () => {
+          document.removeEventListener("click", handleClick);
+        };
+      }, []);
 
     const getDepartures = async () => {
         try {
@@ -53,6 +76,7 @@ function Home() {
     const handleChangeDeparture = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target?.value.toLowerCase();
         setDepartureName(value);
+        setShowDepartureDropdown(true);
         const filtered = departureList.filter((x) =>
             x.country.toLowerCase().includes(value)
         );
@@ -63,6 +87,7 @@ function Home() {
     const handleChangeDestination = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target?.value.toLowerCase();
         setDestinationName(value);
+        setShowDestinationDropdown(true);
         const filtered = destinationList.filter((x) =>
             x.desCountry.toLowerCase().includes(value)
         );
@@ -91,14 +116,42 @@ function Home() {
                     headers: { 'Content-Type': 'application/json' },
                 });
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                const data = await response.json();
-                console.log(data);
+                const data :Ticket[] = await response.json();
+                setTicketList(data);
+                console.log(ticketList);
             }
         } catch (error) {
             console.error('Erreur lors de la récupération des tickets:', error);
 
         }
 
+    }
+
+    function handleRound() {
+     setIsRoundTrip(true)
+     console.log(isRoundTrip);
+    }
+
+    const selectReturnTrip = async () => {
+        setTicketList([]);
+        let newIdDeparture = departureList.find((x) => x.country === destinationName)?.idDeparture;
+        let newIdDestination = destinationList.find((x) => x.desCountry === departureName)?.idDestination;
+
+        try {
+            if ((newIdDeparture !== undefined || newIdDeparture !== null) && (newIdDestination !== undefined || newIdDestination !== null)) {
+                const response = await fetch(`https://localhost:7014/api/Tickets?idDeparture=${newIdDeparture}&idDestination=${newIdDestination}`, {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                });
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                const data :Ticket[] = await response.json();
+                setTicketList(data);
+                console.log(ticketList);
+            }
+        } catch (error) {
+            console.error('Erreur lors de la récupération des tickets:', error);
+
+        }
     }
 
     return (
@@ -114,9 +167,9 @@ function Home() {
                     value={departureName}
                 />
                 <div>
-                    {filteredDepartures.map((item) => (
+                    {showDepartureDropdown? filteredDepartures.map((item) => (
                         <span key={item.idDeparture} onClick={() => saveDeparture(item.idDeparture, item.country)}>{item.country}</span>
-                    ))}
+                    )) : <p></p>}
                 </div>
             </div>
 
@@ -130,13 +183,34 @@ function Home() {
                     value={destinationName}
                 />
                 <div>
-                    {filteredDestinations.map((item) => (
+                    {showDestinationDropdown? filteredDestinations.map((item) => (
                         <span key={item.idDestination} onClick={() => saveDestination(item.idDestination, item.desCountry)}>{item.desCountry}</span>
-                    ))}
+                    )) : <p></p>}
                 </div>
             </div>
 
+            <button onClick={handleRound}>round trip</button>
+
             <button onClick={() => onSubmitCountries()}>Se connecter</button>
+
+            <div>
+                {
+                    ticketList.length > 0?
+                    <div>
+                    {ticketList.map((ticket) => (
+                        <section>
+                            <div key = {ticket.idTicket}>
+                                <p>{ticket.departure_date}</p>
+                                <p>{ticket.boarding_hour}</p>
+                                <p>{ticket.price}</p>
+                                <p>{ticket.sit_number}</p>
+                            </div>
+                           {isRoundTrip ? <button onClick={selectReturnTrip}>choisir le retour</button> :<p></p>}
+                        </section>
+                    ))}
+                    </div> : <p></p>
+                }
+            </div>
         </main>
     );
 }
