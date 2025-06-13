@@ -1,6 +1,6 @@
 import { useState } from "react";
 import LoginForm from "../../Components/LoginForm";
-import { LoginCredentials, responseConnexion } from "../../Models/Types";
+import type { LoginCredentials, responseConnexion } from "../../Models/Types";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../../AuthContext";
 
@@ -36,7 +36,7 @@ function RegistartionUser(){
             }
         };
     return (
-        <body>
+        <div>
             <main>
                 <h2>Registration</h2>
                 {userName !== "" ?
@@ -46,7 +46,7 @@ function RegistartionUser(){
                 />}
 
             </main>
-        </body>
+        </div>
     )
 
 }

@@ -1,5 +1,7 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
-import { departure, destination, Ticket } from '../../Models/Ticket';
+import { useState, useEffect } from 'react';
+import type { ChangeEvent } from 'react';
+import type { departure, destination, Ticket } from '../../Models/Ticket';
+import { Link } from 'react-router-dom';
 
 function Home() {
     const [departureList, setDepartureList] = useState<departure[]>([]);
@@ -134,8 +136,8 @@ function Home() {
 
     const selectReturnTrip = async () => {
         setTicketList([]);
-        let newIdDeparture = departureList.find((x) => x.country === destinationName)?.idDeparture;
-        let newIdDestination = destinationList.find((x) => x.desCountry === departureName)?.idDestination;
+        const newIdDeparture = departureList.find((x) => x.country === destinationName)?.idDeparture;
+        const newIdDestination = destinationList.find((x) => x.desCountry === departureName)?.idDestination;
 
         try {
             if ((newIdDeparture !== undefined || newIdDeparture !== null) && (newIdDestination !== undefined || newIdDestination !== null)) {
@@ -204,6 +206,7 @@ function Home() {
                                 <p>{ticket.boarding_hour}</p>
                                 <p>{ticket.price}</p>
                                 <p>{ticket.sit_number}</p>
+                                <Link to="login-user"><span>se connecter</span></Link>
                             </div>
                            {isRoundTrip ? <button onClick={selectReturnTrip}>choisir le retour</button> :<p></p>}
                         </section>

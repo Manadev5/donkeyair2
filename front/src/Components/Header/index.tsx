@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../AuthContext';
+import  logo from '../../Assets/logo_DonkeyAir.png';
 
 function Header() {
-    const LogoDonkey = require( '../../Assets/logo_DonkeyAir.png');
     const {isAuthenticated, logout} = useAuth();
 
 
     return (
 
-        <body>
+        <div>
             <nav className="top-top">
                 <div className="top">
                     <div className="logo-top-left">
-                        <Link className="nav-link" to="home"><img src={LogoDonkey} height="70px" alt="logo-donkey" /></Link>
+                        <Link className="nav-link" to="home"><img src={logo} height="70px" alt="logo-donkey" /></Link>
                     </div>
                     
                         {isAuthenticated? <button onClick={logout}>se deconnecter</button>
@@ -25,7 +25,7 @@ function Header() {
                 </div>
             </nav>
 
-        </body>
+        </div>
     )
 }
 export default Header;

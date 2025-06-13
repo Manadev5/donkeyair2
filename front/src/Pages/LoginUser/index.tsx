@@ -1,5 +1,5 @@
 import LoginForm from "../../Components/LoginForm";
-import { LoginCredentials, responseConnexion } from "../../Models/Types";
+import type { LoginCredentials, responseConnexion } from "../../Models/Types";
 import { useAuth } from "../../AuthContext";
 
 function LoginUser(){
@@ -27,7 +27,7 @@ function LoginUser(){
             }
         };
     return (
-        <body>
+        <div>
             <main>
                 <h1>Login</h1>
                 <LoginForm
@@ -35,7 +35,7 @@ function LoginUser(){
 
                 />
             </main>
-        </body>
+        </div>
     )
 
 }
